@@ -3,7 +3,9 @@ import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { Navbar, Nav, NavItem, NavbarBrand, Button, Row, Col } from 'reactstrap';
 import image from '../images/logo.png'
-
+import { GoHome, GoTasklist, } from "react-icons/go";
+import { GiDiceSixFacesFour} from "react-icons/gi";
+import {CgCalendarDates} from "react-icons/cg";
 class Navigation extends Component {
 
 
@@ -14,29 +16,16 @@ class Navigation extends Component {
             <Navbar color="dark">
                <NavbarBrand >
                   <Row>
-                  <Col sm={2}></Col>
-                     <Col sm={2}>   <img src={image} width="50%" height="100%" ></img></Col>
-                    
-                     <Col sm={7}></Col>
+                     <Col sm={2}>TODOS</Col>
                   </Row>
-
-
                </NavbarBrand>
                <Nav >
                   <NavItem>
-                     <NavLink to="/"><Button color="info">Home</Button> </NavLink>
-                     {/* <NavLink to="/">
-                        <Select
-                           //value=
-                           isClearable
-                           closeMenuOnSelect={true}
-                           placeholder='Search movie by genre...'
-                           options={this.state.genre}
-                           //onChange={this.handleOnChange}
-                        //className="searchCampaign"
-                        />
-                     </NavLink> */}
-                     <NavLink to="/Settings"><Button color="info"> Sign in</Button> </NavLink>
+                     <NavLink to="/" ><Button color="info" outline><GoHome/> Home</Button> </NavLink>
+                     <NavLink to="/" ><Button color="info" outline><GoTasklist/> My Task</Button> </NavLink>
+                     <NavLink to="/" ><Button color="info" outline> <GiDiceSixFacesFour/> Subscription</Button> </NavLink>
+                     <NavLink to="/" ><Button color="info" outline><CgCalendarDates/> Calender</Button> </NavLink>
+                     <NavLink to="/Settings"><Button color="info" outline> Sign in</Button> </NavLink>
                   </NavItem>
                </Nav>
             </Navbar>
@@ -46,9 +35,9 @@ class Navigation extends Component {
    }
 }
 
-const mapStateToProps = (state) => {
-   console.log("InMaptoProps");
-   console.log(state);
+const mapStateToProps = ( state ) => {
+   console.log( "InMaptoProps" );
+   console.log( state );
    return {
       generalVal: state.generalVal,
       businessVal: state.businessVal,
@@ -58,4 +47,4 @@ const mapStateToProps = (state) => {
 
 };
 
-export default connect(mapStateToProps, null)(Navigation);
+export default connect( mapStateToProps, null )( Navigation );

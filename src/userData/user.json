@@ -1,20 +1,5 @@
 [
    {
-      "id": "11",
-      "user_id": "7",
-      "communityname": "Pre-Open Market",
-      "created_date": "2020-09-02 00:41:26",
-      "modified_date": "2020-09-28 04:43:58",
-      "communitycategory": "General",
-      "communityimage": "a4d1ef6d85f596204a0642496afa353e.png",
-      "slug": "pre-open-market",
-      "status": "1",
-      "is_deleted": "0",
-      "followers_no": "13",
-      "communitytype": "1",
-      "communityabout": "This topic is for Pre-Open Market posts. A post will be self-distruct after 24 hour."
-   },
-   {
       "id": "13",
       "user_id": "7",
       "communityname": "Zydus Wellness",
@@ -38,7 +23,7 @@
       "communitycategory": "General",
       "communityimage": "c26c2cc7ffc3cfd6bbc12a3da41bb887.jpeg",
       "slug": "zuari-global",
-      "status": "1",
+      "status": "0",
       "is_deleted": "0",
       "followers_no": "0",
       "communitytype": "0",

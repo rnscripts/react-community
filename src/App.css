@@ -16,7 +16,7 @@
 
  .moviebg {
    border-radius: 8px;
-   background-color:hsla(313, 56%, 37%, 0.555);;
+   background-color:hsla(14, 90%, 28%, 0.555);;
    padding: 20px 10px 10px 10px;
  }
 .App-header {
@@ -43,8 +43,20 @@
   }
 }
 
+.dateaAlign{
+   text-align: center;
+   color:orange
+}
 
+.align-1{
+   text-align: center;
+   color:green
+}
 
+.align-2{
+   text-align: center;
+   color:orange
+}
 /* The container */
 .container {
   display: block;

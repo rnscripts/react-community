@@ -2,40 +2,62 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { recommend } from "../actions/action.js"
 import { Card, CardImg, CardSubtitle, CardTitle, CardText, CardBody, Row, Col, Button } from 'reactstrap';
-import { GrLike, GrDislike } from "react-icons/gr";
+import {BsDot } from "react-icons/bs";
 
 class profile extends Component {
 
-   // constructor(props) {
-   //   super(props);
-   //   this.state = {
-   //   };
-   // }
+
    render() {
+      let date = this.props.data.created_date.split( " " )[0];
+      console.log( date );
+
       return (
          <div>
             <br></br>
-            <Card style={{ backgroundColor: 'white' }}>
+            <Card style={{ backgroundColor: 'white' }} >
                <CardBody>
                   <Row>
                      <Col sm={3}>
-                        <CardImg top width="100%" height="150"
+                        <CardImg top width="100%" height="80"
                            src={"https://www.pennydia.com/attachments/communityimages/" + this.props.data.communityimage}
                            alt="Card image cap" />
                      </Col>
-                     <Col sm={3}>
-                        <CardTitle style={{ color: 'black' }}>{this.props.data.communityname}</CardTitle>
+
+                     <Col sm={9}>
+                        <Row>
+                           <Col sm={5}>
+                              <CardTitle style={{ color: 'red' }}><b>{this.props.data.communityname}</b></CardTitle>
+                           </Col>
+                           <Col sm={3}></Col>
+                           <Col sm={4}>
+                              <CardSubtitle tag="h6" className="mb-2 text-muted dateaAlign" style={{ color: 'black' }}  >
+                                 {date}
+                              </CardSubtitle>
+                           </Col>
+
+                        </Row>
+                        <Row>
+                           <Col sm={4}>
+                              <CardSubtitle tag="h6" className="mb-2 text-muted "  >
+                                 {this.props.data.communityabout}
+                              </CardSubtitle>
+                           </Col>
+                           <Col sm={4}></Col>
+                           <Col sm={4}>
+                              <CardTitle style={{ color: 'black' }} >
+                                 {this.props.data.status == "1"
+                                    ? <p className="align-1"><BsDot size={30}/>InProgress</p>
+                                    : <p className="align-2"><BsDot size={30}/>Completed</p>
+                                 }
+                              </CardTitle>
+                           </Col>
+                        </Row>
                      </Col>
-                     <Col sm={4}></Col>
+
                   </Row>
-                  <CardSubtitle tag="h6" className="mb-2 text-muted "  >
-                     {this.props.data.communityabout}
-                  </CardSubtitle>
-                  <CardSubtitle tag="h6" className="mb-2 text-muted "  >
-                     {
-                        this.props.data.status == "1" ? <p>InProgress</p> : <p>Completed</p>
-                     }
-                  </CardSubtitle>
+                  <br></br>
+
+
                </CardBody>
             </Card>
          </div>

@@ -16,7 +16,7 @@ class Profiles extends Component {
 
       return (
          <div style={{ color: "white" }}>
-            <b>Profile</b>
+          
             {
                userData.map( user => {
                   return (
